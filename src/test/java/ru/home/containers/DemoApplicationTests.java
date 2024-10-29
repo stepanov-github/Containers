@@ -37,21 +37,21 @@ public class DemoApplicationTests {
     void contextLoads() {
     }
 
-//    @Test
-//    void contextLoadsDev() {
-//        final String expected = "Current profile is dev";
-//        ResponseEntity<String> devResponse = restTemplate.getForEntity("http://lacalhost"
-//                + devapp.getMappedPort(8080) + ENDPOINT, String.class);
-//        System.out.println(devResponse.getBody());
-//        Assertions.assertEquals(expected, devResponse.getBody());
-//    }
-//
-//    @Test
-//    void contextLoadsProd() {
-//        final String expected = "Current profile is production";
-//        ResponseEntity<String> prodResponse = restTemplate.getForEntity("http://lacalhost"
-//                + prodapp.getMappedPort(8081) + ENDPOINT, String.class);
-//        System.out.println(prodResponse.getBody());
-//        Assertions.assertEquals(expected, prodResponse.getBody());
-//    }
+    @Test
+    void contextLoadsDev() {
+        final String expected = "Current profile is dev";
+        ResponseEntity<String> devResponse = restTemplate.getForEntity("http://localhost:"
+                + devapp.getMappedPort(8080) + ENDPOINT, String.class);
+        System.out.println(devResponse.getBody());
+        Assertions.assertEquals(expected, devResponse.getBody());
+    }
+
+    @Test
+    void contextLoadsProd() {
+        final String expected = "Current profile is production";
+        ResponseEntity<String> prodResponse = restTemplate.getForEntity("http://localhost:"
+                + prodapp.getMappedPort(8081) + ENDPOINT, String.class);
+        System.out.println(prodResponse.getBody());
+        Assertions.assertEquals(expected, prodResponse.getBody());
+    }
 }
